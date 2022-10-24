@@ -4,6 +4,7 @@ from .base import *
 SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 
 DEBUG = 'RENDER' not in os.environ
+# DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -20,7 +21,7 @@ DATABASES = {
 
 STATIC_URL = 'static/'
 
-# if not DEBUG:
-#     # STATIC_ROOT = os.path.join(BASE_DIR, 'dist/static')
-#     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-#     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+if not DEBUG:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'dist/static')
+    # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
