@@ -111,10 +111,6 @@ AUTH_USER_MODEL = 'usuario.Usuario'
 
 STATIC_URL = 'static/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'dist/static')
-]
-
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
@@ -142,5 +138,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #     "http://localhost:8080",
 #     "http://127.0.0.1:9000",
 # ]
-
-CORS_ALLOW_ALL_ORIGINS = True
